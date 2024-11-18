@@ -1,0 +1,12 @@
+<h2>Liste des cartes de crédit</h2>
+<ul>
+  <li *ngFor="let card of cartes(); let i = index">
+    <strong>Numéro de carte :</strong> {{ card.cardNumber | maskCard:4:'•' }}<br />
+    <strong>Date d'expiration :</strong> {{ card.expirationDate }}<br />
+    <strong>CVV :</strong> {{ card.cvv | maskCard:1:'•'}}<br>
+    <strong>Code :</strong> {{ card.code | maskCard}}<br>
+    <strong>Nom du titulaire :</strong> {{ card.cardHolderName }}<br />
+    <button (click)="onRemove(i)">Supprimer</button>
+    <hr />
+  </li>
+</ul>
