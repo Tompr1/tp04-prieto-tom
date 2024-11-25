@@ -1,16 +1,17 @@
 import { Injectable, signal } from '@angular/core';
+import { Card } from './models/card.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartesService {
-  private cartesSignal = signal<any[]>([]);
+  private cartesSignal = signal<Card[]>([]);
 
   getCartes() {
     return this.cartesSignal.asReadonly();
   }
 
-  addCarte(carte: any) {
+  addCarte(carte: Card) {
     this.cartesSignal.update((cartes) => {
       return [...cartes, carte];
     });

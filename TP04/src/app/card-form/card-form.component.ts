@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { NgIf } from '@angular/common';
 import { Output, EventEmitter } from '@angular/core';
 import { CartesService } from '../cartes.service';
+import { Card } from '../models/card.model';
 
 @Component({
   selector: 'app-card-form',
@@ -27,7 +28,8 @@ export class CardFormComponent {
 
   onSubmit() {
     if (this.CardForm.valid) {
-      this.cartesService.addCarte(this.CardForm.value);
+      const cardData: Card = this.CardForm.value;
+      this.cartesService.addCarte(cardData);
       this.CardForm.reset();
     } else {
       this.CardForm.markAllAsTouched();

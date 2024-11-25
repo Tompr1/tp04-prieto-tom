@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartesService } from '../cartes.service';
 import { MaskCardPipe } from '../mask-card.pipe';
+import { Card } from '../models/card.model';
 
 @Component({
   selector: 'app-list-card',

@@ -2,7 +2,7 @@
     <div>
       <label for="cardNumber">Numéro de carte :</label>
       <input id="cardNumber" formControlName="cardNumber" type="text" />
-      <div *ngIf="CardForm.get('cardNumber')?.invalid">
+      <div class="error-message" *ngIf="CardForm.get('cardNumber')?.invalid">
         Numéro de carte invalide.
       </div>
     </div>
@@ -10,7 +10,7 @@
     <div>
       <label for="expirationDate">Date d'expiration (MM/AA) :</label>
       <input id="expirationDate" formControlName="expirationDate" type="text" placeholder="MM/AA" />
-      <div *ngIf="CardForm.get('expirationDate')?.invalid">
+      <div class="error-message" *ngIf="CardForm.get('expirationDate')?.invalid">
         Date d'expiration invalide.
       </div>
     </div>
@@ -18,15 +18,15 @@
     <div>
       <label for="cvv">CVV :</label>
       <input id="cvv" formControlName="cvv" type="text" />
-      <div *ngIf="CardForm.get('cvv')?.invalid">
+      <div class="error-message" *ngIf="CardForm.get('cvv')?.invalid">
         CVV invalide.
       </div>
     </div>
 
     <div>
         <label for="code">Code :</label>
-        <input id="code" formControlName="code" type="text" />
-        <div *ngIf="CardForm.get('code')?.invalid">
+        <input id="code" formControlName="code" type="password" />
+        <div class="error-message" *ngIf="CardForm.get('code')?.invalid">
           Le code est requis.
         </div>
       </div>
@@ -34,7 +34,7 @@
     <div>
       <label for="cardHolderName">Nom du titulaire :</label>
       <input id="cardHolderName" formControlName="cardHolderName" type="text" />
-      <div *ngIf="CardForm.get('cardHolderName')?.invalid">
+      <div class="error-message" *ngIf="CardForm.get('cardHolderName')?.invalid">
         Le nom du titulaire est requis.
       </div>
     </div>
